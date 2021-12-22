@@ -17,6 +17,15 @@ export var getMenu = async (entryId = '6wKUqAuj95bWl80kpUreYN') => {
 
 export var getPageById = async (id) => {
     var entry = await client.getEntry(id)
-    console.log(entry)
     return entry.fields
+}
+
+export var getSlideshow = async () => {
+    var entry = await client.getEntry('2fppMoXpsfcNDI1YFX04y0')
+    console.log(entry.fields.images)
+    var images = entry.fields.images.map(image => ({
+        src: image.fields.file.url,
+        title: image.fields.title,
+    }))
+    return images
 }

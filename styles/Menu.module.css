@@ -1,0 +1,29 @@
+
+.wrapper {
+    display: flex; 
+}
+.menu {
+    margin: 0; 
+    padding: 15px 0;
+    display: flex;
+    list-style: none;
+    width: 100%;
+}
+
+.logo {
+    flex-basis: 120px;
+    width: 100px;
+    margin: 10px 0 0 2px;
+}
+
+.items {
+    flex: 1;
+}
+
+.menu li {
+    padding: 10px 20px 0 0;
+}
+
+.menu li a {
+    font-size: 26px;
+}

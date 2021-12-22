@@ -1,3 +1,6 @@
+
+@import url('//cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css');
+
 html,
 body {
   padding: 0;
@@ -15,13 +18,9 @@ a {
   box-sizing: border-box;
 }
 
-ul.menu {
-  margin: 0; 
-  padding: 0;
-  list-style: none;
-}
-.menu li.logo {
-  width: 100px;
+.container {
+  margin: 0 auto;
+  max-width: 1260px;
 }
 
 

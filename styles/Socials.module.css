@@ -1,0 +1,33 @@
+.socialsWrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.socialsWrapper a {
+  display: block;
+  height: 30px;
+  width: 30px;
+  margin-right: 10px;
+  color: #eee;
+  background-color: rgb(133, 133, 133);
+}
+
+.insta {
+    -webkit-mask: url(/instagram.svg) no-repeat center;
+    mask: url(/instagram.svg) no-repeat center;
+}
+
+.face {
+    -webkit-mask: url(/facebook.svg) no-repeat center;
+    mask: url(/facebook.svg) no-repeat center;
+}
+
+.nextdoor {
+    -webkit-mask: url(/nextdoor.svg) no-repeat center;
+    mask: url(/nextdoor.svg) no-repeat center;
+}
+
+.socialsWrapper span {
+    display: none;
+}
