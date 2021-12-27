@@ -46,6 +46,9 @@ p {
    line-height: 30px;
 }
 
+a {
+  color: rgb(79, 161, 59);
+}
 
 .footer {
   width: 100%;
@@ -68,9 +71,23 @@ p {
   align-items: center;
   margin: 0 auto 20px auto;
   padding: 0;
+  font-size: 18px;
 }
 
 .footer ul li {
-  margin: 10px 10px 0 0;
-  font-size: 16px;
+  margin: 10px 20px 0 0;
+  
 }
+
+@media screen and (max-width: 700px) {
+  .footer ul {
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 15px;
+  }
+  .footer {
+    padding: 5%;
+    font-size: 11px;
+  }
+}
+  

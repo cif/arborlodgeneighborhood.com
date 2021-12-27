@@ -21,11 +21,19 @@ export const Menu = ({ items }) => {
                     />
                 </a>
                 <div className={styles.flexExpander}></div>
-                <div className={styles.subscribe}>
-                    <a href="">
-                        <span className={styles.envelope} />
-                        <span className={styles.subscribeText}>Get Email Updates</span>
-                    </a>
+                <div className={styles.headerButtons}>
+                    <div className={styles.headerButton}>
+                        <a href="">
+                            <span className={`${styles.buttonIcon} ${styles.donate}`} />
+                            <span className={styles.headerButtonText}>Donate</span>
+                        </a>
+                    </div>
+                    <div className={styles.headerButton}>
+                        <a href="">
+                        <span className={`${styles.buttonIcon} ${styles.envelope}`} />
+                            <span className={styles.headerButtonText}>Subscribe</span>
+                        </a>
+                    </div>
                 </div>
                 <Socials />
                 <div className={styles.toggle} onClick={() => setMenuExpanded(!isMenuExpanded)}>

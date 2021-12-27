@@ -1,11 +1,12 @@
 import Head from 'next/head'
 import styles from '../styles/MainLayout.module.css'
-import { getMenu, getPageById, getSlideshow } from '../contentful'
+import { getLatestUpdates, getMenu, getPageById, getSlideshow } from '../contentful'
 import { Menu } from '../components/Menu'
 import { Slideshow } from '../components/Slideshow'
 import { Footer } from '../components/Footer'
+import { UpdateText } from '../components/UpdateText'
 
-export default function Home({ menu, show = [], page = {} }) {
+export default function Home({ menu, show = [], page = {}, updates = [] }) {
   return (<>
       <Head>
         <title>{page.seoTitle || 'Arbor Lodge Neighborhood, Portland OR'}</title>
@@ -21,14 +22,7 @@ export default function Home({ menu, show = [], page = {} }) {
    
       <main className={`${styles.main} ${styles.container}`}>
         <section className={styles.left}>
-          <h1>Welcome to Arbor Lodge</h1>
-          <h2>This is heading two</h2>
-          <h3>This is heading three</h3>
-          <h3>This is heading four</h3>
-          <p>This is paragraph. This is paragraphThis is paragraphThis is paragraphThis is paragraphThis is paragraphThis is paragraph
-          This is paragraphThis is paragraph
-          This is paragraphThis is paragraphThis is paragraphThis is paragraph
-          </p>
+          {updates.map(update => <UpdateText {...update} />)}
         </section>
 
         <section className={styles.right}>
@@ -51,7 +45,9 @@ export const getServerSideProps = async () => {
   var menu = await getMenu()
   var page = await getPageById('6wKUqAuj95bWl80kpUreYN')
   var show = await getSlideshow()
+  var updates = await getLatestUpdates()
+  console.log(updates)
   return {
-    props: { menu, page, show },
+    props: { menu, page, show, updates },
   };
 }

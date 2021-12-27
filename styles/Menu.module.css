@@ -29,27 +29,39 @@
     flex: 1;
 }
 
-.subscribe {
+.headerButtons {
+    display: flex;
+}
+
+.headerButton {
     margin-right: 10px;
 }
 
-.subscribe a {
+.headerButton a {
     display: flex;
-    background-color: rgba(82, 125, 82, 0.844);
+    background-color: rgb(82, 125, 82);
     padding: 10px 20px;
     border-radius: 4px;
     font-weight: 200;
     color: #fff;
 }
 
-.envelope {
+.buttonIcon {
     display: inline-block;
     width: 24px;
     height: 25px;
     margin-right: 10px;
+    background-color: #fff;
+}
+
+.envelope {
     -webkit-mask: url(/envelope.svg) no-repeat center;
     mask: url(/envelope.svg) no-repeat center;
-    background-color: #fff;
+}
+
+.donate {
+    -webkit-mask: url(/donate.svg) no-repeat center;
+    mask: url(/donate.svg) no-repeat center;
 }
 
 .toggle {
@@ -62,7 +74,7 @@
     display: block;
     width: 30px;
     height: 30px;
-    background-color: rgba(82, 125, 82, 0.844);
+    background-color: rgb(82, 125, 82);
 }
 
 .toggle span {
@@ -81,7 +93,7 @@
 
 .bar {
     width: 100%;
-    background-color: rgba(82, 125, 82, 0.844);
+    background-color: rgb(82, 125, 82);
 }
 
 .menu {
@@ -126,6 +138,11 @@
     .wrapper {
         width: 100%;
     }
+
+    .top {
+        height: 150px;
+    }
+    
     .menu {
         position: absolute;
         padding: 62px 10px 10px 20px;
@@ -144,13 +161,30 @@
         font-size: 32px;
         font-weight: 400;
     }
-    .subscribeText {
+    .headerButtonText {
         display: none;
     }
-    .envelope {
+    .buttonIcon {
         margin-right: 0;
     }
     .toggle {
         margin-right: 15px;
+        margin-top: 60px;
     }
+    .headerButtons {
+        position: absolute;
+        right: 5px;
+        top: 20px;
+        z-index: 9999;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    
+    /* .headerButtonText {
+        display: inline-block;
+    }
+    .buttonIcon {
+        margin-right: 5px;
+    } */
 }

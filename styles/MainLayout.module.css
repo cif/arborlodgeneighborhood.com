@@ -6,17 +6,11 @@
   max-width: 1260px;
 }
 
-.title a {
-  color: #0070f3;
-  text-decoration: none;
+.update {
+  margin: 0 0 35px 0;
+  padding-bottom: 35px;
+  border-bottom: 1px solid #efefef;
 }
-
-.title a:hover,
-.title a:focus,
-.title a:active {
-  text-decoration: underline;
-}
-
 .main {
   display: flex;
 }
@@ -24,13 +18,14 @@
 .left {
   flex: 1;
   padding: 1rem;
+  margin-top: -10px;
 }
 
 .right {
   flex: 0 0 420px;
 }
 
-@media screen and (max-width: 800px) {  
+@media screen and (max-width: 1000px) {  
   .main {
     display: flex;
     flex-direction: column;

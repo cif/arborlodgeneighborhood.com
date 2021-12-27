@@ -22,10 +22,17 @@ export var getPageById = async (id) => {
 
 export var getSlideshow = async () => {
     var entry = await client.getEntry('2fppMoXpsfcNDI1YFX04y0')
-    console.log(entry.fields.images)
     var images = entry.fields.images.map(image => ({
         src: image.fields.file.url,
         title: image.fields.title,
     }))
     return images
+}
+
+export var getLatestUpdates = async () => {
+    var entries = await client.getEntries({
+        content_type: 'update',
+        order: '-fields.published',
+    })
+    return entries.items.map(item => item.fields)
 }
