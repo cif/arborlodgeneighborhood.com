@@ -1,29 +1,93 @@
 
 .wrapper {
-    display: flex; 
+    margin: 20px auto 0 auto;
 }
-.menu {
-    margin: 0; 
-    padding: 15px 0;
+
+
+.top {
     display: flex;
-    list-style: none;
-    width: 100%;
+    flex: 1;
+    align-items: center;
+    max-width: 1260px;
+    margin: 0 auto 20px auto;
 }
 
 .logo {
+    flex: 0 0 100px;
     flex-basis: 120px;
     width: 100px;
-    margin: 10px 0 0 2px;
+    position: absolute;
+    top: 20px;
+    
 }
 
-.items {
+.flexExpander {
     flex: 1;
 }
 
+.subscribe {
+    margin-right: 10px;
+}
+
+.subscribe a {
+    display: block;
+    background-color: rgb(133, 133, 133);
+    padding: 10px 20px;
+}
+
+.toggle {
+   flex: 0 0 35px;
+   margin-left: 10px;
+   display: none;
+}
+
+.toggle a {
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-color: rgb(133, 133, 133);
+}
+
+.toggle span {
+    display: none;
+}
+
+.hamburger {
+    -webkit-mask: url(/hamburger.svg) no-repeat center;
+    mask: url(/hamburger.svg) no-repeat center;
+}
+
+.close {
+    -webkit-mask: url(/close.svg) no-repeat center;
+    mask: url(/close.svg) no-repeat center;
+}
+
+.bar {
+    width: 100%;
+    background-color: rgba(82, 125, 82, 0.844);
+}
+
+.menu {
+    padding: 10px 10px 10px 120px;
+    display: flex;
+    list-style: none;  
+    flex: 1;
+    max-width: 1260px;
+    margin: 0 auto;
+}
+
+
 .menu li {
-    padding: 10px 20px 0 0;
+    padding: 10px 20px;
 }
 
 .menu li a {
-    font-size: 26px;
+    font-size: 22px;
+    color: #fff;
 }
+
+@media only screen and (max-width: 500px) {
+    .toggle {
+        display: block;
+    }
+  }

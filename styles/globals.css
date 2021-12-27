@@ -1,12 +1,11 @@
 
-@import url('//cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Source+Sans+Pro:wght@200;600&display=swap');
 
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: Poppins, sans-serif;
 }
 
 a {
