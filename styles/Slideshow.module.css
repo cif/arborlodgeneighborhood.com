@@ -3,6 +3,7 @@
     position: relative;
     overflow: hidden;
     margin: 4px 0;
+    z-index: 1;
 }
 
 .slide {

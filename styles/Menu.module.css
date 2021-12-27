@@ -1,15 +1,18 @@
 
 .wrapper {
-    margin: 20px auto 0 auto;
+    padding: 20px auto 0 auto;
+    background-color: rgba(160, 201, 99, 0.884);
 }
 
 
 .top {
+    position: relative;
     display: flex;
     flex: 1;
     align-items: center;
     max-width: 1260px;
-    margin: 0 auto 20px auto;
+    margin: 0 auto;
+    height: 90px;
 }
 
 .logo {
@@ -18,7 +21,8 @@
     width: 100px;
     position: absolute;
     top: 20px;
-    
+    left: 10px;
+    z-index: 900;
 }
 
 .flexExpander {
@@ -30,14 +34,27 @@
 }
 
 .subscribe a {
-    display: block;
-    background-color: rgb(133, 133, 133);
+    display: flex;
+    background-color: rgba(82, 125, 82, 0.844);
     padding: 10px 20px;
+    border-radius: 4px;
+    font-weight: 200;
+    color: #fff;
+}
+
+.envelope {
+    display: inline-block;
+    width: 24px;
+    height: 25px;
+    margin-right: 10px;
+    -webkit-mask: url(/envelope.svg) no-repeat center;
+    mask: url(/envelope.svg) no-repeat center;
+    background-color: #fff;
 }
 
 .toggle {
    flex: 0 0 35px;
-   margin-left: 10px;
+   margin: 0 10px;
    display: none;
 }
 
@@ -45,7 +62,7 @@
     display: block;
     width: 30px;
     height: 30px;
-    background-color: rgb(133, 133, 133);
+    background-color: rgba(82, 125, 82, 0.844);
 }
 
 .toggle span {
@@ -74,6 +91,7 @@
     flex: 1;
     max-width: 1260px;
     margin: 0 auto;
+    font-weight: 200;
 }
 
 
@@ -86,8 +104,53 @@
     color: #fff;
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 900px) {
+    .menu li {
+        padding: 10px 15px;
+    }
+    
+    .menu li a {
+        font-size: 18px;
+        color: #fff;
+    }
+  }
+
+@media only screen and (max-width: 750px) {
+    .logo {
+        left: 15px;
+        top: 15px;
+    }
     .toggle {
         display: block;
     }
-  }
+    .wrapper {
+        width: 100%;
+    }
+    .menu {
+        position: absolute;
+        padding: 62px 10px 10px 20px;
+        z-index: 100;
+        width: 100vw;
+        height: 100vh;
+        flex-direction: column;
+        background-color: rgba(82, 125, 82);
+    }
+
+    .menu li {
+        padding: 5px;
+    }
+
+    .menu li a {
+        font-size: 32px;
+        font-weight: 400;
+    }
+    .subscribeText {
+        display: none;
+    }
+    .envelope {
+        margin-right: 0;
+    }
+    .toggle {
+        margin-right: 15px;
+    }
+}

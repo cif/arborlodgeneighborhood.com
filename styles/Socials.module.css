@@ -2,6 +2,8 @@
     flex: 0 0 100px;
     display: flex;
     align-items: center;
+    margin-right: 20px;
+        margin-left: 10px;
 }
 
 .socialsWrapper a {
@@ -10,7 +12,7 @@
   width: 30px;
   margin: 0 5px;
   color: #eee;
-  background-color: rgb(133, 133, 133);
+  background-color: rgba(82, 125, 82, 0.844);
 }
 
 .insta {
@@ -30,4 +32,11 @@
 
 .socialsWrapper span {
     display: none;
+}
+
+@media only screen and (max-width: 750px) {
+    .socialsWrapper {
+        margin-right: 10px;
+        margin-left: 10px;
+    }
 }

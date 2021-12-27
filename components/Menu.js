@@ -2,9 +2,13 @@ import React, { useState } from 'react'
 import Image from 'next/image'
 import styles from '../styles/Menu.module.css'
 import { Socials } from '../components/Socials'
+import { Pages } from './Pages'
 
 export const Menu = ({ items }) => {
-    const [isMenuExpanded, setMenuExpanded] = useState(false)
+    
+    const defaultMenuState = global.window ? global.window.innerWidth > 768 : false
+    const [isMenuExpanded, setMenuExpanded] = useState(defaultMenuState)
+    
     return (
         <div class={styles.wrapper}>
             <div class={styles.top}>
@@ -18,7 +22,10 @@ export const Menu = ({ items }) => {
                 </a>
                 <div className={styles.flexExpander}></div>
                 <div className={styles.subscribe}>
-                    <a href="">Get Email Updates</a>
+                    <a href="">
+                        <span className={styles.envelope} />
+                        <span className={styles.subscribeText}>Get Email Updates</span>
+                    </a>
                 </div>
                 <Socials />
                 <div className={styles.toggle} onClick={() => setMenuExpanded(!isMenuExpanded)}>
@@ -28,15 +35,11 @@ export const Menu = ({ items }) => {
                 </div>
             </div>
             <div className={styles.bar}>
-                <ul className={styles.menu}>
-                    {items.map(item => (
-                        <li className="menu-item">
-                            <a href={`/${item.url}`} className="menu-link">
-                                <span className="menu-link-text">{item.title}</span>
-                            </a>
-                        </li>
-                    ))}
-                </ul> 
+                <Pages 
+                    items={items} 
+                    ulStyle={styles.menu}
+                    display={isMenuExpanded} 
+                />
             </div>
         </div>
     )
