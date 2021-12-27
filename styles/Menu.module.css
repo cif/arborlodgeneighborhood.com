@@ -161,12 +161,8 @@
         font-size: 32px;
         font-weight: 400;
     }
-    .headerButtonText {
-        display: none;
-    }
-    .buttonIcon {
-        margin-right: 0;
-    }
+    
+    
     .toggle {
         margin-right: 15px;
         margin-top: 60px;
@@ -180,11 +176,10 @@
 }
 
 @media only screen and (max-width: 500px) {
-    
-    /* .headerButtonText {
-        display: inline-block;
+    .headerButtonText {
+        display: none;
     }
     .buttonIcon {
-        margin-right: 5px;
-    } */
+        margin-right: 0;
+    }
 }

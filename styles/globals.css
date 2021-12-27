@@ -39,6 +39,11 @@ h2 {
 h1 {
   font-size: 35px;
   font-weight: 200;  
+  line-height: 40px;
+}
+
+h4 {
+  color: rgb(113, 124, 113);
 }
 
 p {
