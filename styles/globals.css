@@ -48,11 +48,21 @@ h4 {
 
 p {
    font-weight: 200;
-   line-height: 30px;
+   line-height: 28px;
 }
 
 a {
   color: rgb(79, 161, 59);
+}
+
+a:hover {
+  color: rgb(130, 199, 112);
+  transition: color 0.2s ease-in-out;
+}
+
+ul li p {
+  margin: 0;
+  line-height: 25px;
 }
 
 .footer {
@@ -80,8 +90,7 @@ a {
 }
 
 .footer ul li {
-  margin: 10px 20px 0 0;
-  
+  margin: 0 20px 0 0; 
 }
 
 @media screen and (max-width: 700px) {

@@ -21,8 +21,15 @@
     width: 100px;
     position: absolute;
     top: 20px;
-    left: 10px;
+    left: 20px;
     z-index: 900;
+    opacity: .85;
+    transition: all 230ms ease-in-out;
+}
+
+.logo:hover {
+    opacity: 1;
+    transition: all 230ms ease-in-out;
 }
 
 .flexExpander {
