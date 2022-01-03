@@ -78,6 +78,7 @@ ul li p {
 .inner {
   max-width: 1260px;
   margin: 0 auto;
+  padding: 1rem;
 }
 
 .footer ul {

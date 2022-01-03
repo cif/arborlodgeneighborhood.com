@@ -16,6 +16,8 @@
   display: flex;
   width: 100vw;
   overflow: hidden;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 
 .left {
