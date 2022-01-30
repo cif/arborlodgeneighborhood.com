@@ -65,6 +65,10 @@ ul li p {
   line-height: 25px;
 }
 
+p {
+  white-space: pre-wrap;
+}
+
 .footer {
   width: 100%;
   font-weight: 200;

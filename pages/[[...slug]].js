@@ -1,12 +1,13 @@
 import Head from 'next/head'
 import styles from '../styles/MainLayout.module.css'
-import { getLatestUpdates, getMenu, getPageById, getSlideshow } from '../contentful'
+import { getLatestUpdates, getMenu, getPageById, getPageBySlug, getSlideshow } from '../contentful'
 import { Menu } from '../components/Menu'
 import { Slideshow } from '../components/Slideshow'
 import { Footer } from '../components/Footer'
 import { UpdateText } from '../components/UpdateText'
+import { PageText } from '../components/PageText'
 
-export default function Home({ menu, show = [], page = {}, updates = [] }) {
+export default function Home({ menu, show = [], slug, page = {}, updates = [] }) {
   return (<>
       <Head>
         <title>{page.seoTitle || 'Arbor Lodge Neighborhood, Portland OR'}</title>
@@ -18,11 +19,16 @@ export default function Home({ menu, show = [], page = {}, updates = [] }) {
         <Menu items={menu} />
       </nav>
       <Slideshow images={show} />  
-
-   
+      
       <main className={`${styles.main} ${styles.container}`}>
         <section className={styles.left}>
-          {updates.map(update => <UpdateText {...update} />)}
+          {!slug && // homepage should just map updates
+            updates.map(update => <UpdateText key={update.title} {...update} />)
+          }
+          {slug &&
+          
+            <PageText title={page.title} content={page.pageContent} />
+          }
         </section>
 
         <section className={styles.right}>
@@ -41,13 +47,22 @@ export default function Home({ menu, show = [], page = {}, updates = [] }) {
     </>)
 }
 
-export const getServerSideProps = async () => {
+export const getServerSideProps = async ({ query }) => {
   var menu = await getMenu()
-  var page = await getPageById('6wKUqAuj95bWl80kpUreYN')
   var show = await getSlideshow()
   var updates = await getLatestUpdates()
-  console.log(updates)
+  var slug = query.slug ? query.slug[0] : null
+  var page = slug 
+    ? await getPageBySlug(slug)
+    : await getPageById('6wKUqAuj95bWl80kpUreYN')
+
   return {
-    props: { menu, page, show, updates },
+    props: { 
+      menu, 
+      page, 
+      show, 
+      updates,
+      slug 
+    },
   };
 }

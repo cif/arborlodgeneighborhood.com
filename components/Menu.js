@@ -10,8 +10,8 @@ export const Menu = ({ items }) => {
     const [isMenuExpanded, setMenuExpanded] = useState(defaultMenuState)
     
     return (
-        <div class={styles.wrapper}>
-            <div class={styles.top}>
+        <div className={styles.wrapper}>
+            <div className={styles.top}>
                 <a href="/" className={styles.logo} >
                     <Image 
                         src="/arbor_lodge_association_logo.png" 

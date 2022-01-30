@@ -20,6 +20,15 @@ export var getPageById = async (id) => {
     return entry.fields
 }
 
+export var getPageBySlug = async (slug) => {
+    var entries = await client.getEntries({
+        content_type: 'menuItem',
+        ['fields.url']: slug,
+    })
+    
+    return entries.items.map(item => item.fields)[0]
+}
+
 export var getSlideshow = async () => {
     var entry = await client.getEntry('2fppMoXpsfcNDI1YFX04y0')
     var images = entry.fields.images.map(image => ({
