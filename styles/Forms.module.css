@@ -1,6 +1,8 @@
 .searchWrap {
+    width: 100%;
     margin: 5px 0 20px 0;
     display: flex;
+    position: relative;
 }
 
 .signupWrap {
@@ -19,13 +21,14 @@
 }
 
 .searchWrap input {
-    flex-grow: 1;
+    flex:  0 0 190px;
+    max-width: 260px;
 }
 
 .searchWrap button {
     border: none;
     background-color: rgb(82, 125, 82);  
-    flex: 0 0 60px;
+    flex: 0 0 10%;
 }
 
 .searchIcon {
