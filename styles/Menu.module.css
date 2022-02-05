@@ -131,12 +131,10 @@
 }
 .menu li:hover ul {
     display: block;
-    opacity: 1;
     transition: all ease-out 230ms;
 }
 
 .menu li ul {
-    opacity: 0;
     display: none;
     position: absolute;
     left: 5px;
@@ -185,7 +183,10 @@
     .menu li ul {
         display: block;
         position: relative;
-        border-bottom: 0
+        border-bottom: 0;
+        top: 0;
+        left: 0;
+        background: none;
     }
   }
 
