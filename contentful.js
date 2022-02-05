@@ -6,13 +6,21 @@ var client = createClient({
 });
 
 export var getMenu = async (entryId = '6wKUqAuj95bWl80kpUreYN') => {
-    var entry = await client.getEntry(entryId)
-    return entry.fields.children
-        .filter(child => child.fields.active)
-        .map(child => ({
-            title: child.fields.title,
-            url: child.fields.url
-        }))
+    var rootMenuItem = await client.getEntries({
+        'sys.id': entryId,
+        content_type: 'menuItem',
+        include: 2,
+        select: 'fields.active,fields.url,fields.title,fields.children'
+    })
+
+    const mappedItem = (item) => ({
+        url: item.fields.url,
+        title: item.fields.title,
+        children: item.fields.children ? item.fields.children.map(mappedItem) : []
+    })
+
+    const menu = rootMenuItem.items[0].fields.children.map(mappedItem)
+    return menu
 }
 
 export var getPageById = async (id) => {
@@ -22,6 +30,7 @@ export var getPageById = async (id) => {
 
 export var getPageBySlug = async (slug) => {
     var entries = await client.getEntries({
+        include: 1,
         content_type: 'menuItem',
         ['fields.url']: slug,
     })

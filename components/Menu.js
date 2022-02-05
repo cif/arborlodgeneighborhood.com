@@ -9,6 +9,7 @@ export const Menu = ({ items }) => {
     const defaultMenuState = global.window ? global.window.innerWidth > 768 : false
     const [isMenuExpanded, setMenuExpanded] = useState(defaultMenuState)
     
+
     return (
         <div className={styles.wrapper}>
             <div className={styles.top}>
@@ -20,7 +21,7 @@ export const Menu = ({ items }) => {
                         height={120}
                     />
                 </a>
-                <div className={styles.flexExpander}></div>
+                <div className={styles.flexExpander} />
                 <div className={styles.headerButtons}>
                     <div className={styles.headerButton}>
                         <a href="">

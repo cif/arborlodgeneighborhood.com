@@ -31,6 +31,10 @@
   margin: 0;
 }
 
+.right h1 {
+  font-size: 22px;
+}
+
 @media screen and (max-width: 1000px) {  
   .main {
     display: flex;
@@ -39,6 +43,10 @@
   .container {
     margin: 0 auto;
     min-width: 100%;
+  }
+  .right {
+    margin: 0 auto;
+    width: 85%
   }
 }
   

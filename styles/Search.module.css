@@ -1,0 +1,38 @@
+.searchWrap {
+    margin: 5px 0 20px 0;
+    display: flex;
+}
+
+.searchWrap input, .searchWrap button {
+    border: 1px solid #ccc;
+    font-family: Poppins, sans-serif;
+    padding: 8px 14px;
+    font-weight: 100;
+    font-size: 19px;
+    border-radius: 5px;
+    margin: 0 5px 0 0;
+
+}
+
+.searchWrap input {
+    flex: 1;
+}
+
+.searchWrap button {
+    background-color: rgb(82, 125, 82);  
+    flex: 0 0 60px;
+}
+
+.searchIcon {
+    padding: 3px;
+    display: inline-block;
+    transform: scale(0.8);
+    background-color: #fff;
+    -webkit-mask: url(/search.svg) no-repeat center;
+    mask: url(/search.svg) no-repeat center;
+}
+
+.searchIcon span {
+    visibility: hidden;
+    font-size: 10px;
+}

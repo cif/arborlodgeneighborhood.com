@@ -113,14 +113,48 @@
     font-weight: 200;
 }
 
-
 .menu li {
     padding: 10px 20px;
+    position: relative;
+}
+
+.menu li:hover ul {
+    display: block;
 }
 
 .menu li a {
     font-size: 22px;
     color: #fff;
+}
+
+.menu li ul {
+    display: none;
+    position: absolute;
+    left: 0;
+    width: 220px;
+    z-index: 100;
+    background-color: rgb(82, 125, 82);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-bottom: 2px solid #fff;
+}
+
+.menu li ul a {
+    font-size: 18px;
+}
+
+.submenu h2 {
+    font-weight: 500;
+}
+
+.submenu {
+    margin: 15px 0 35px 0;
+}
+
+.submenu li a {
+    font-size: 20px;
+    font-weight: 300;
 }
 
 @media only screen and (max-width: 900px) {
@@ -131,6 +165,11 @@
     .menu li a {
         font-size: 18px;
         color: #fff;
+    }
+    .menu li ul {
+        display: block;
+        position: relative;
+        border-bottom: 0
     }
   }
 
