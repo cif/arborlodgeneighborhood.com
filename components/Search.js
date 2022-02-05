@@ -1,6 +1,6 @@
 
 import { useState } from 'react'
-import styles from '../styles/Search.module.css'
+import styles from '../styles/Forms.module.css'
 
 export const Search = () => {
     const [searchTerm, setSearchTerm] = useState('')
@@ -27,7 +27,7 @@ export const Search = () => {
             />
             <button 
                 className={styles.searchButton}
-                onClick={(e) => openSearch(e)}
+                onClick={openSearch}
             >
                 <span className={styles.searchIcon}>
                     <span>Search</span>

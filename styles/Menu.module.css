@@ -104,7 +104,7 @@
 }
 
 .menu {
-    padding: 10px 10px 10px 120px;
+    padding: 0 10px 0 120px;
     display: flex;
     list-style: none;  
     flex: 1;
@@ -114,36 +114,52 @@
 }
 
 .menu li {
-    padding: 10px 20px;
+    padding: 20px;
     position: relative;
 }
 
-.menu li:hover ul {
-    display: block;
-}
+
 
 .menu li a {
     font-size: 22px;
     color: #fff;
+    transition: all ease-out 230ms;
+}
+
+.menu li a:hover {
+    color: rgba(160, 201, 99, 0.927);
+}
+.menu li:hover ul {
+    display: block;
+    opacity: 1;
+    transition: all ease-out 230ms;
 }
 
 .menu li ul {
+    opacity: 0;
     display: none;
     position: absolute;
-    left: 0;
+    left: 5px;
+    top: 74px;
     width: 220px;
     z-index: 100;
-    background-color: rgb(82, 125, 82);
+    background-color: rgba(160, 201, 99, 0.927);
     list-style: none;
     margin: 0;
-    padding: 0;
+    padding: 10px 0;
     border-bottom: 2px solid #fff;
+    transition: all ease-out 230ms;
 }
 
+.menu li ul li {
+    padding: 10px 20px;
+}
 .menu li ul a {
     font-size: 18px;
 }
-
+.menu li ul a:hover {
+    color: rgb(82, 125, 82);
+}
 .submenu h2 {
     font-weight: 500;
 }

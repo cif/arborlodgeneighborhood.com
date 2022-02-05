@@ -3,15 +3,19 @@
     display: flex;
 }
 
-.searchWrap input, .searchWrap button {
-    border: 1px solid #ccc;
-    font-family: Poppins, sans-serif;
-    padding: 8px 14px;
-    font-weight: 100;
-    font-size: 19px;
-    border-radius: 5px;
-    margin: 0 5px 0 0;
+.signupWrap {
+    margin: 5px 0 20px 0;
+    display: flex;
+    flex-direction: column;
+}
 
+.signupWrap input, .signupWrap button {
+    margin: 10px 0;
+}
+
+.signupWrap button {
+    background-color: rgb(82, 125, 82);  
+    color: #fff;
 }
 
 .searchWrap input {
@@ -19,6 +23,7 @@
 }
 
 .searchWrap button {
+    border: none;
     background-color: rgb(82, 125, 82);  
     flex: 0 0 60px;
 }

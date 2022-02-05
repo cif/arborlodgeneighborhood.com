@@ -12,6 +12,7 @@
   padding-bottom: 35px;
   border-bottom: 1px solid #efefef;
 }
+
 .main {
   display: flex;
   width: 100vw;
@@ -28,7 +29,7 @@
 
 .right {
   flex: 0 0 420px;
-  margin: 0;
+  margin: 5px 3%;
 }
 
 .right h1 {
@@ -44,9 +45,15 @@
     margin: 0 auto;
     min-width: 100%;
   }
+  .update {
+    border: none;
+  }
   .right {
+    border-top: 1px solid #efefef;
+    margin-top: 50px;
+    padding-top: 40px;
     margin: 0 auto;
-    width: 85%
+    width: 93%
   }
 }
   

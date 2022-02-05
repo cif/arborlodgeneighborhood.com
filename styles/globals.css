@@ -69,6 +69,21 @@ p {
   white-space: pre-wrap;
 }
 
+input, button {
+  border: 1px solid #ccc;
+  font-family: Poppins, sans-serif;
+  padding: 8px 14px;
+  font-weight: 100;
+  font-size: 19px;
+  border-radius: 5px;
+  margin: 0 5px 0 0;
+}
+
+button {
+  border: none;
+}
+
+
 .footer {
   width: 100%;
   font-weight: 200;

@@ -8,13 +8,16 @@ import { UpdateText } from '../components/UpdateText'
 import { PageText } from '../components/PageText'
 import { Submenu } from '../components/Submenu'
 import { Search } from '../components/Search'
+import { EmailSignup } from '../components/EmailSignup'
+
 export default function Home({ 
   menu, 
   show = [], 
   slug, 
   page = {}, 
   updates = [],
-  neighborhoods 
+  neighborhoods,
+  signup 
 }) {
   return (<>
       <Head>
@@ -44,6 +47,8 @@ export default function Home({
         <section className={styles.right}>
           <Search />
           {slug ? <Submenu menu={menu} page={page} /> : null}
+          <EmailSignup content={signup} />
+          
           <iframe 
             src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11171.697016678798!2d-122.6923388!3d45.5719618!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5495a7a3b74d15c1%3A0xf60b1b34aa1f920b!2sArbor%20Lodge%2C%20Portland%2C%20OR%2097217!5e0!3m2!1sen!2sus!4v1640201179662!5m2!1sen!2sus" 
             width="100%" 
@@ -67,6 +72,7 @@ export const getServerSideProps = async ({ query, res }) => {
   var show = await getSlideshow()
   var updates = await getLatestUpdates()
   var neighborhoods = await getPageById('4ydMQwzKqYOJGLAeZqp9DG')
+  var signup = await getPageById('kxAhXgspXuMhAeY5OqwDa')
 
   // dynamic page created by slug
   var slug = query.slug ? query.slug[0] : null
@@ -86,7 +92,8 @@ export const getServerSideProps = async ({ query, res }) => {
       show, 
       updates,
       slug,
-      neighborhoods 
+      neighborhoods,
+      signup 
     },
   };
 }
