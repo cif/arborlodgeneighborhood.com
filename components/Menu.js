@@ -24,13 +24,13 @@ export const Menu = ({ items }) => {
                 <div className={styles.flexExpander} />
                 <div className={styles.headerButtons}>
                     <div className={styles.headerButton}>
-                        <a href="">
+                        <a href="/donations/">
                             <span className={`${styles.buttonIcon} ${styles.donate}`} />
                             <span className={styles.headerButtonText}>Donate</span>
                         </a>
                     </div>
                     <div className={styles.headerButton}>
-                        <a href="">
+                        <a href="https://arborlodgeneighborhood.us3.list-manage.com/subscribe/post?u=ebf29143f036362e0c576e6ed&amp;id=e786761a57" target="_blank">
                         <span className={`${styles.buttonIcon} ${styles.envelope}`} />
                             <span className={styles.headerButtonText}>Subscribe</span>
                         </a>
