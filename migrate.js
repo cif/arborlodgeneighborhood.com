@@ -31,7 +31,7 @@ var failed = []
 
 async function main() {
     // these were manually stepped through 50 records at a time.
-    // await importEntry(entries[101])
+    await importEntry(entries[0])
     // for (let i = 600; i < 628; i++) {
     //     await importEntry(entries[i])
     // }

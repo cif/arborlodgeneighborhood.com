@@ -29,11 +29,22 @@
 
 .right {
   flex: 0 0 420px;
-  margin: 5px 3%;
+  padding: 5px 3%;
 }
 
 .right h1 {
   font-size: 22px;
+}
+
+.image {
+  display: block;
+  margin: 35px auto;
+  border: 1px solid grey;
+  padding: 5px;
+}
+
+.landUseMargin {
+  margin-top: 50px;
 }
 
 @media screen and (max-width: 1000px) {  

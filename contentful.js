@@ -1,6 +1,6 @@
 import { createClient } from 'contentful';
 
-const UPDATES_PAGE_SIZE = 10;
+const UPDATES_PAGE_SIZE = 5;
 
 var client = createClient({
     space: process.env.CF_SPACE_ID,
@@ -49,12 +49,16 @@ export var getSlideshow = async () => {
     return images
 }
 
-export var getLatestUpdates = async (page = 1) => {
+export var getLatestUpdates = async (page = 1, filterLandUse = false) => {
+    var tagQuery = filterLandUse 
+        ? {'metadata.tags.sys.id[all]': 'landUse'}
+        : {}
     var entries = await client.getEntries({
         content_type: 'update',
         order: '-fields.published',
         skip: (page - 1) * UPDATES_PAGE_SIZE,
         limit: UPDATES_PAGE_SIZE,
+        ...tagQuery
     })
     return {
         page,

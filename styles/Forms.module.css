@@ -21,8 +21,7 @@
 }
 
 .searchWrap input {
-    flex:  0 0 190px;
-    max-width: 260px;
+    flex-grow: 1;
 }
 
 .searchWrap button {
@@ -52,12 +51,19 @@
 .pagination a,
 .pagination span {
     display: block;
-    margin: 3px;
+    margin: 1px;
+    padding: 3px 5px;
     color: rgb(79, 161, 59);
 }
 
 .pageText {
-    margin: 3px;
-    color: #333;
+    margin: 6px;
+    color: rgb(123, 123, 123);
     font-size: 13px;
+}
+
+.currentPage {
+    background-color: rgb(79, 161, 59);
+    color: #fff !important;
+    border-radius: 5px;
 }

@@ -43,8 +43,20 @@ export default function Home({
             
           }
           {page && slug && // found page, display title and content
-            <PageText title={page.title} content={page.pageContent} />
+            <PageText title={page.title} content={page.pageContent} />            
           }
+
+          {slug == 'land-use' && 
+            <div className={styles.landUseMargin}>
+              <h2>Recent Land Use Updates</h2>
+              <br />
+              {updates.entries.map(update => <UpdateText key={update.title} {...update} />)}
+              <div className={styles.pagination}>
+                <Pagination baseUrl="/land-use" {...updates} />
+              </div>
+            </div>
+          }
+          
           {!page && // not found page, display 404
             <h1>Sorry, there doesn't seem to be anything at this URL.</h1>
           }
@@ -78,8 +90,7 @@ export const getServerSideProps = async ({ query, res }) => {
   var show = await getSlideshow()
   var neighborhoods = await getPageById('4ydMQwzKqYOJGLAeZqp9DG')
   var signup = await getPageById('kxAhXgspXuMhAeY5OqwDa')
-console.log(query)
-  var updates = await getLatestUpdates(query.p)
+  
 
   // dynamic page created by slug
   var slug = query.slug ? query.slug[0] : null
@@ -91,6 +102,9 @@ console.log(query)
   if (!page) {
     res.statusCode = 404
   }
+
+  var isLandUse = query.slug == 'land-use'
+  var updates = await getLatestUpdates(query.p, isLandUse)
 
   return {
     props: { 
