@@ -38,7 +38,7 @@ export const Menu = ({ items }) => {
                 </div>
                 <Socials />
                 <div className={styles.toggle} onClick={() => setMenuExpanded(!isMenuExpanded)}>
-                    <a href="javascript:void(0)" className={!isMenuExpanded ? styles.hamburger : styles.close}>
+                    <a className={!isMenuExpanded ? styles.hamburger : styles.close}>
                         <span>Toggle Menu</span>
                     </a>
                 </div>

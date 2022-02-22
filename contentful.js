@@ -1,5 +1,7 @@
 import { createClient } from 'contentful';
 
+const UPDATES_PAGE_SIZE = 10;
+
 var client = createClient({
     space: process.env.CF_SPACE_ID,
     accessToken: process.env.CF_TOKEN
@@ -47,10 +49,17 @@ export var getSlideshow = async () => {
     return images
 }
 
-export var getLatestUpdates = async () => {
+export var getLatestUpdates = async (page = 1) => {
     var entries = await client.getEntries({
         content_type: 'update',
         order: '-fields.published',
+        skip: (page - 1) * UPDATES_PAGE_SIZE,
+        limit: UPDATES_PAGE_SIZE,
     })
-    return entries.items.map(item => item.fields)
+    return {
+        page,
+        pageSize: UPDATES_PAGE_SIZE,
+        total: entries.total,
+        entries: entries.items.map(item => item.fields)
+    }
 }

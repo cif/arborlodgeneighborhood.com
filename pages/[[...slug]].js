@@ -9,13 +9,13 @@ import { PageText } from '../components/PageText'
 import { Submenu } from '../components/Submenu'
 import { Search } from '../components/Search'
 import { EmailSignup } from '../components/EmailSignup'
-
+import { Pagination } from '../components/Pagination'
 export default function Home({ 
   menu, 
   show = [], 
   slug, 
   page = {}, 
-  updates = [],
+  updates = {},
   neighborhoods,
   signup 
 }) {
@@ -34,7 +34,13 @@ export default function Home({
       <main className={`${styles.main} ${styles.container}`}>
         <section className={styles.left}>
           {(page && !slug) && // homepage should just map updates
-            updates.map(update => <UpdateText key={update.title} {...update} />)
+            <div>
+              {updates.entries.map(update => <UpdateText key={update.title} {...update} />)}
+              <div className={styles.pagination}>
+                <Pagination baseUrl="/" {...updates} />
+              </div>
+            </div>
+            
           }
           {page && slug && // found page, display title and content
             <PageText title={page.title} content={page.pageContent} />
@@ -70,9 +76,10 @@ export default function Home({
 export const getServerSideProps = async ({ query, res }) => {
   var menu = await getMenu()
   var show = await getSlideshow()
-  var updates = await getLatestUpdates()
   var neighborhoods = await getPageById('4ydMQwzKqYOJGLAeZqp9DG')
   var signup = await getPageById('kxAhXgspXuMhAeY5OqwDa')
+console.log(query)
+  var updates = await getLatestUpdates(query.p)
 
   // dynamic page created by slug
   var slug = query.slug ? query.slug[0] : null
