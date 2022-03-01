@@ -60,7 +60,6 @@ export var getLatestUpdates = async (page = 1, filterLandUse = false) => {
         limit: UPDATES_PAGE_SIZE,
         ...tagQuery
     })
-    console.log(entries.items[0])
     
     return {
         page,
