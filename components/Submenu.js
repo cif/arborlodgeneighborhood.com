@@ -21,7 +21,6 @@ export const Submenu = ({ page, menu }) => {
         }
     }
     const mainPage = currentMainPage()
-    console.log('curren page?', mainPage)
     return mainPage.children 
     ? (
         <div className={styles.submenu}>

@@ -25,9 +25,9 @@ export var getMenu = async (entryId = '6wKUqAuj95bWl80kpUreYN') => {
     return menu
 }
 
-export var getPageById = async (id) => {
+export var getContentById = async (id) => {
     var entry = await client.getEntry(id)
-    return entry.fields
+    return { ...entry.fields, id: entry.sys.id }
 }
 
 export var getPageBySlug = async (slug) => {
@@ -60,10 +60,11 @@ export var getLatestUpdates = async (page = 1, filterLandUse = false) => {
         limit: UPDATES_PAGE_SIZE,
         ...tagQuery
     })
+    
     return {
         page,
         pageSize: UPDATES_PAGE_SIZE,
         total: entries.total,
-        entries: entries.items.map(item => item.fields)
+        entries: entries.items.map(item => ({ ...item.fields, id: item.sys.id }))
     }
 }
