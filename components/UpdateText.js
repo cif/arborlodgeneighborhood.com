@@ -2,12 +2,13 @@ import { documentToReactComponents as renderRichText } from '@contentful/rich-te
 import { BLOCKS, INLINES } from "@contentful/rich-text-types";
 import styles from '../styles/MainLayout.module.css';
 import slugify from 'slugify';
+import moment from 'moment';
 
 export const UpdateText = ({ title, published, summary, description, id }) => (
     <div className={styles.update}>
-     {published ? <h4>{new Date(published).toLocaleDateString()}</h4> : null}
+     {published ? <h4>{moment(published, "YYYY-MM-DD").format("MM/DD/YYYY")}</h4> : null}
      {title ? <h1>
-                  <a href={`/post/${id}/${new Date(published).toLocaleDateString()}/${slugify(title)}`}>
+                  <a href={`/post/${id}/${moment(published, "YYYY-MM-DD").format("MM/DD/YYYY")}/${slugify(title)}`}>
                     {title}
                   </a>
               </h1> 
