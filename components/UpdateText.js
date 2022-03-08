@@ -17,7 +17,6 @@ export const UpdateText = ({ title, published, summary, description, id }) => (
      {summary ? <h2>{summary}</h2> : null}
      {description && renderRichText(description, {
        renderNode: { [BLOCKS.EMBEDDED_ASSET]: (node, children) => {
-        {console.log(node)}
         return (
           <img
             className={styles.image}
