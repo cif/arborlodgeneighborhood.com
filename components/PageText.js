@@ -12,8 +12,7 @@ export const PageText = ({ content, title }) => (
           <img
             className={styles.image}
             src={`https://${node.data.target.fields.file.url}`}
-            height={node.data.target.fields.file.details.image.height}
-            width={node.data.target.fields.file.details.image.width}
+            width="75%"
             alt={node.data.target.fields.description}
           />
         );

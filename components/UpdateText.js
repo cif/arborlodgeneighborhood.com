@@ -17,13 +17,12 @@ export const UpdateText = ({ title, published, summary, description, id }) => (
      {summary ? <h2>{summary}</h2> : null}
      {description && renderRichText(description, {
        renderNode: { [BLOCKS.EMBEDDED_ASSET]: (node, children) => {
-        // render the EMBEDDED_ASSET as you need
+        {console.log(node)}
         return (
           <img
             className={styles.image}
             src={`https://${node.data.target.fields.file.url}`}
-            height={node.data.target.fields.file.details.image.height}
-            width={node.data.target.fields.file.details.image.width}
+            width="75%"
             alt={node.data.target.fields.description}
           />
         );
