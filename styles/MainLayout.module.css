@@ -59,6 +59,10 @@
   .update {
     border: none;
   }
+  .left {
+    max-width: 96%;
+    margin: 0 auto;
+  }
   .right {
     border-top: 1px solid #efefef;
     margin-top: 50px;
