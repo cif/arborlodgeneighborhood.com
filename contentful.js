@@ -22,7 +22,6 @@ export var getMenu = async (entryId = '6wKUqAuj95bWl80kpUreYN') => {
     })
 
     const menu = rootMenuItem.items[0].fields.children.map(mappedItem)
-    console.log(JSON.stringify(menu, null, 2))
     return menu
 }
 

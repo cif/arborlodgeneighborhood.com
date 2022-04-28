@@ -17,6 +17,23 @@ export const UpdateText = ({ title, published, summary, description, id }) => (
      {summary ? <h2>{summary}</h2> : null}
      {description && renderRichText(description, {
        renderNode: { [BLOCKS.EMBEDDED_ASSET]: (node, children) => {
+        // check to see if it is PDF
+        if (node.data.target.fields.file.contentType === 'application/pdf') {
+          return (
+            <p style={{ textAlign: 'center', lineHeight: '3px' }}>
+              <a href={`https://${node.data.target.fields.file.url}`} >
+                <span>{node.data.target.fields.title}</span>
+                <img
+                  className={styles.document}
+                  src="/pdf-icon.png"
+                  width="25%"
+                  alt={`Download/ view ${node.data.target.fields.description}`}
+                />
+            </a>
+          </p>
+          );
+        }
+
         return (
           <img
             className={styles.image}

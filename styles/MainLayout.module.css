@@ -43,6 +43,13 @@
   padding: 5px;
 }
 
+.document {
+  display: block;
+  margin: 15px auto;
+  border: 1px solid grey;
+  padding: 5px;
+}
+
 .landUseMargin {
   margin-top: 50px;
 }
